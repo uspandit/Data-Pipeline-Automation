@@ -1,0 +1,191 @@
+[0m16:52:01.136330 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000262A0C8B200>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000262A17DBB30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000262A1A91220>]}
+
+
+============================== 16:52:01.143744 | 2c355cae-6e4e-46f9-b8c4-03a27a5ad633 ==============================
+[0m16:52:01.143744 [info ] [MainThread]: Running with dbt=1.8.4
+[0m16:52:01.145746 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': 'logs', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\yuria\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'invocation_command': 'dbt init', 'send_anonymous_usage_stats': 'True'}
+[0m16:52:01.188883 [error] [MainThread]: Encountered an error:
+[ConfigFolderDirectory]: Unable to parse dict {'dir': WindowsPath('C:/Users/yuria/.dbt')}
+[0m16:52:01.197237 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\yuria\anaconda3\Lib\site-packages\google\protobuf\json_format.py", line 608, in _ConvertFieldValuePair
+    _ConvertScalarFieldValue(value, field,
+  File "C:\Users\yuria\anaconda3\Lib\site-packages\google\protobuf\json_format.py", line 779, in _ConvertScalarFieldValue
+    if _UNPAIRED_SURROGATE_PATTERN.search(value):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: expected string or bytes-like object, got 'WindowsPath'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\yuria\anaconda3\Lib\site-packages\dbt_common\events\base_types.py", line 67, in __init__
+    self.pb_msg = ParseDict(kwargs, msg_cls())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yuria\anaconda3\Lib\site-packages\google\protobuf\json_format.py", line 446, in ParseDict
+    parser.ConvertMessage(js_dict, message, '')
+  File "C:\Users\yuria\anaconda3\Lib\site-packages\google\protobuf\json_format.py", line 487, in ConvertMessage
+    self._ConvertFieldValuePair(value, message, path)
+  File "C:\Users\yuria\anaconda3\Lib\site-packages\google\protobuf\json_format.py", line 622, in _ConvertFieldValuePair
+    raise ParseError(
+google.protobuf.json_format.ParseError: Failed to parse dir field: expected string or bytes-like object, got 'WindowsPath'.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\yuria\anaconda3\Lib\site-packages\dbt\cli\requires.py", line 138, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yuria\anaconda3\Lib\site-packages\dbt\cli\requires.py", line 101, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yuria\anaconda3\Lib\site-packages\dbt\cli\main.py", line 470, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "C:\Users\yuria\anaconda3\Lib\site-packages\dbt\task\init.py", line 301, in run
+    self.create_profiles_dir(profiles_dir)
+  File "C:\Users\yuria\anaconda3\Lib\site-packages\dbt\task\init.py", line 69, in create_profiles_dir
+    fire_event(ConfigFolderDirectory(dir=profiles_dir))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yuria\anaconda3\Lib\site-packages\dbt_common\events\base_types.py", line 76, in __init__
+    raise Exception(error_msg)
+Exception: [ConfigFolderDirectory]: Unable to parse dict {'dir': WindowsPath('C:/Users/yuria/.dbt')}
+
+[0m16:52:01.199246 [debug] [MainThread]: Command `dbt init` failed at 16:52:01.199246 after 0.25 seconds
+[0m16:52:01.200247 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000262A1DC1E80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002629EAAA7E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000262A0F92D50>]}
+[0m16:52:01.201253 [debug] [MainThread]: Flushing usage events
+[0m16:53:25.182267 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A70F0C9280>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A70EFD4320>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A70E2BE0C0>]}
+
+
+============================== 16:53:25.187323 | 3b0aa3b1-0a94-4800-a507-63530e93d50b ==============================
+[0m16:53:25.187323 [info ] [MainThread]: Running with dbt=1.8.4
+[0m16:53:25.188322 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\yuria\\.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt init custom_postgres', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m16:53:25.211426 [error] [MainThread]: Encountered an error:
+[ConfigFolderDirectory]: Unable to parse dict {'dir': WindowsPath('C:/Users/yuria/.dbt')}
+[0m16:53:25.218668 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\yuria\anaconda3\Lib\site-packages\google\protobuf\json_format.py", line 608, in _ConvertFieldValuePair
+    _ConvertScalarFieldValue(value, field,
+  File "C:\Users\yuria\anaconda3\Lib\site-packages\google\protobuf\json_format.py", line 779, in _ConvertScalarFieldValue
+    if _UNPAIRED_SURROGATE_PATTERN.search(value):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: expected string or bytes-like object, got 'WindowsPath'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\yuria\anaconda3\Lib\site-packages\dbt_common\events\base_types.py", line 67, in __init__
+    self.pb_msg = ParseDict(kwargs, msg_cls())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yuria\anaconda3\Lib\site-packages\google\protobuf\json_format.py", line 446, in ParseDict
+    parser.ConvertMessage(js_dict, message, '')
+  File "C:\Users\yuria\anaconda3\Lib\site-packages\google\protobuf\json_format.py", line 487, in ConvertMessage
+    self._ConvertFieldValuePair(value, message, path)
+  File "C:\Users\yuria\anaconda3\Lib\site-packages\google\protobuf\json_format.py", line 622, in _ConvertFieldValuePair
+    raise ParseError(
+google.protobuf.json_format.ParseError: Failed to parse dir field: expected string or bytes-like object, got 'WindowsPath'.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\yuria\anaconda3\Lib\site-packages\dbt\cli\requires.py", line 138, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yuria\anaconda3\Lib\site-packages\dbt\cli\requires.py", line 101, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yuria\anaconda3\Lib\site-packages\dbt\cli\main.py", line 470, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "C:\Users\yuria\anaconda3\Lib\site-packages\dbt\task\init.py", line 301, in run
+    self.create_profiles_dir(profiles_dir)
+  File "C:\Users\yuria\anaconda3\Lib\site-packages\dbt\task\init.py", line 69, in create_profiles_dir
+    fire_event(ConfigFolderDirectory(dir=profiles_dir))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yuria\anaconda3\Lib\site-packages\dbt_common\events\base_types.py", line 76, in __init__
+    raise Exception(error_msg)
+Exception: [ConfigFolderDirectory]: Unable to parse dict {'dir': WindowsPath('C:/Users/yuria/.dbt')}
+
+[0m16:53:25.220679 [debug] [MainThread]: Command `dbt init` failed at 16:53:25.220679 after 0.17 seconds
+[0m16:53:25.220679 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A70EE8E270>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A70F4A9250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A70F4A8E30>]}
+[0m16:53:25.221668 [debug] [MainThread]: Flushing usage events
+[0m16:54:46.269865 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001898EA18EF0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001898E760860>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001898EA18E60>]}
+
+
+============================== 16:54:46.275024 | c6086fc8-b38b-4900-87cb-cb647a4bbb90 ==============================
+[0m16:54:46.275024 [info ] [MainThread]: Running with dbt=1.8.4
+[0m16:54:46.276038 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\yuria\\.dbt', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': 'logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt init my_dbt_project --profiles-dir C:\\Users\\yuria\\.dbt', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m16:54:46.304676 [info ] [MainThread]: Creating dbt configuration folder at C:\Users\yuria\.dbt
+[0m16:54:46.309678 [debug] [MainThread]: Starter project path: C:\Users\yuria\anaconda3\Lib\site-packages\dbt\include\starter_project
+[0m16:54:46.340287 [info ] [MainThread]: 
+Your new dbt project "my_dbt_project" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m16:54:46.341503 [info ] [MainThread]: Setting up your profile.
+[0m16:57:48.439899 [info ] [MainThread]: Profile my_dbt_project written to C:\Users\yuria\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m16:57:48.442281 [debug] [MainThread]: Command `dbt init` succeeded at 16:57:48.441229 after 182.31 seconds
+[0m16:57:48.442281 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001898F4ED070>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001898F46B2F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001898F6D4650>]}
+[0m16:57:48.443231 [debug] [MainThread]: Flushing usage events
+[0m18:06:36.553115 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FD7E499790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FD7DCD0FE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FD7D71FD70>]}
+
+
+============================== 18:06:36.557975 | b833b376-2a69-46ec-8f3d-59035f871295 ==============================
+[0m18:06:36.557975 [info ] [MainThread]: Running with dbt=1.8.4
+[0m18:06:36.558815 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'logs', 'profiles_dir': 'C:\\Users\\yuria\\.dbt', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'invocation_command': 'dbt init my_dbt_project --profiles-dir C:\\Users\\yuria\\.dbt', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m18:06:36.582684 [debug] [MainThread]: Starter project path: C:\Users\yuria\anaconda3\Lib\site-packages\dbt\include\starter_project
+[0m18:06:36.619001 [info ] [MainThread]: 
+Your new dbt project "my_dbt_project" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m18:06:36.620030 [info ] [MainThread]: Setting up your profile.
+[0m18:06:41.590082 [error] [MainThread]: Encountered an error:
+
+[0m18:06:41.596697 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\yuria\anaconda3\Lib\site-packages\dbt\cli\requires.py", line 138, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yuria\anaconda3\Lib\site-packages\dbt\cli\requires.py", line 101, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yuria\anaconda3\Lib\site-packages\dbt\cli\main.py", line 470, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "C:\Users\yuria\anaconda3\Lib\site-packages\dbt\task\init.py", line 347, in run
+    self.setup_profile(profile_name)
+  File "C:\Users\yuria\anaconda3\Lib\site-packages\dbt\task\init.py", line 262, in setup_profile
+    adapter = self.ask_for_adapter_choice()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yuria\anaconda3\Lib\site-packages\dbt\task\init.py", line 243, in ask_for_adapter_choice
+    numeric_choice = click.prompt(prompt_msg, type=click.INT)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yuria\anaconda3\Lib\site-packages\click\termui.py", line 164, in prompt
+    value = prompt_func(prompt)
+            ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yuria\anaconda3\Lib\site-packages\click\termui.py", line 147, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m18:06:41.598712 [debug] [MainThread]: Command `dbt init` failed at 18:06:41.598712 after 5.23 seconds
+[0m18:06:41.599705 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FD7DCD0FE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FD7E809280>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FD7E823B90>]}
+[0m18:06:41.600705 [debug] [MainThread]: Flushing usage events
