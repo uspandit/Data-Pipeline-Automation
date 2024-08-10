@@ -35,8 +35,8 @@ This project demonstrates an ELT (Extract, Load, Transform) workflow using Airfl
 1. **Clone the Repository**
 
     ```bash
-    git clone https://github.com/sanath-tejas-474/data-engineering.git
-    cd data-engineering
+    git clone https://github.com/uspandit/Data-Pipeline-Automation.git
+    cd Data-Pipeline-Automation
     ```
 
 2. **Start the Docker Containers**
